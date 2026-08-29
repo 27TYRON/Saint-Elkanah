@@ -1,0 +1,205 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Shopping Cart | Saint Elkanah{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <div>
+
+        <p class="section-label">
+            SAINT ELKANAH
+        </p>
+
+        <h1>
+            Your Cart
+        </h1>
+
+        <p>
+            Review your selected fragrances.
+        </p>
+
+    </div>
+</section>
+
+
+<section class="cart-section">
+
+    {% if cart_items %}
+
+    <div class="cart-container">
+
+
+        <div class="cart-items">
+
+            {% for item in cart_items %}
+
+            <div class="cart-item">
+
+
+                <div class="cart-item-image">
+
+                    <img
+                        src="{{ item.product.image.url }}"
+                        alt="{{ item.product.name }}"
+                    >
+
+                </div>
+
+
+                <div class="cart-item-info">
+
+                    <h3>
+                        {{ item.product.name }}
+                    </h3>
+
+                    <p>
+                        {{ item.product.size }}
+                    </p>
+
+                    <p class="cart-price">
+                        R{{ item.product.price }}
+                    </p>
+
+                </div>
+
+
+                <div class="cart-quantity">
+
+                    <form
+                        method="POST"
+                        action="{% url 'update_cart' item.product.id %}"
+                    >
+
+                        {% csrf_token %}
+
+                        <input
+                            type="number"
+                            name="quantity"
+                            value="{{ item.quantity }}"
+                            min="1"
+                        >
+
+                        <button type="submit">
+                            Update
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <div class="cart-item-total">
+
+                    <strong>
+                        R{{ item.total }}
+                    </strong>
+
+                </div>
+
+
+                <div class="cart-remove">
+
+                    <a
+                        href="{% url 'remove_from_cart' item.product.id %}"
+                    >
+                        Remove
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        <aside class="cart-summary">
+
+            <p class="section-label">
+                ORDER SUMMARY
+            </p>
+
+            <h2>
+                Your Order
+            </h2>
+
+            <div class="summary-line">
+
+                <span>
+                    Items
+                </span>
+
+                <span>
+                    {{ cart_count }}
+                </span>
+
+            </div>
+
+
+            <div class="summary-line total-line">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    R{{ cart_total }}
+                </strong>
+
+            </div>
+
+
+            <a
+                href="{% url 'checkout' %}"
+                class="btn btn-gold checkout-button"
+            >
+                Proceed To Checkout
+            </a>
+
+
+            <a
+                href="{% url 'shop' %}"
+                class="continue-shopping"
+            >
+                ← Continue Shopping
+            </a>
+
+        </aside>
+
+    </div>
+
+
+    {% else %}
+
+    <div class="empty-cart">
+
+        <div class="empty-cart-icon">
+            🛍️
+        </div>
+
+        <h2>
+            Your Cart Is Empty
+        </h2>
+
+        <p>
+            Discover a fragrance that tells your story.
+        </p>
+
+        <a
+            href="{% url 'shop' %}"
+            class="btn btn-dark"
+        >
+            Explore Our Collection
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}
+

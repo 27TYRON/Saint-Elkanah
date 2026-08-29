@@ -1,0 +1,113 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Our Story | Saint Elkanah{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <div>
+        <p class="section-label">SAINT ELKANAH</p>
+        <h1>Our Story</h1>
+        <p>Discover the story behind the fragrance.</p>
+    </div>
+</section>
+
+
+<section class="about-section">
+
+    <div class="about-image">
+        <img src="{% static 'images/perfume-intro.jpg' %}"
+             alt="Saint Elkanah">
+    </div>
+
+    <div class="about-content">
+
+        <p class="section-label">ESTABLISHED 2024</p>
+
+        <h2>A Fragrance With A Purpose</h2>
+
+        <p>
+            Saint Elkanah was founded in 2024 with a simple
+            vision: to create fragrances that inspire confidence,
+            elegance and individuality.
+        </p>
+
+        <p>
+            We believe fragrance is more than something you wear.
+            It is an expression of who you are, a memory,
+            a mood and a signature that can leave a lasting
+            impression.
+        </p>
+
+        <p>
+            Our collection is created for individuals who
+            appreciate beautiful scents and timeless elegance.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="about-values">
+
+    <div class="section-heading">
+        <p class="section-label">OUR VALUES</p>
+        <h2>What We Stand For</h2>
+    </div>
+
+    <div class="values-grid">
+
+        <div class="value-card">
+            <span>✦</span>
+            <h3>Elegance</h3>
+            <p>
+                We believe in timeless beauty and sophisticated
+                fragrances.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <span>✧</span>
+            <h3>Confidence</h3>
+            <p>
+                Every fragrance is designed to help you express
+                your unique identity.
+            </p>
+        </div>
+
+        <div class="value-card">
+            <span>♢</span>
+            <h3>Individuality</h3>
+            <p>
+                Your fragrance should be as distinctive as you are.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about-quote">
+
+    <div>
+        <p class="section-label">THE SAINT ELKANAH PHILOSOPHY</p>
+
+        <h2>
+            "Leave a fragrance.
+            Leave an impression."
+        </h2>
+
+        <span class="gold-line"></span>
+
+        <p>
+            Saint Elkanah — Founded 2024
+        </p>
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,268 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Contact Us | Saint Elkanah{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <div>
+        <p class="section-label">GET IN TOUCH</p>
+        <h1>Contact Us</h1>
+        <p>We would love to hear from you.</p>
+    </div>
+</section>
+
+
+<section class="contact-section">
+
+    <div class="contact-info">
+
+        <p class="section-label">SAINT ELKANAH</p>
+
+        <h2>Let's Connect</h2>
+
+        <p>
+            Have a question about our fragrances, an order,
+            delivery or anything else? Our customer care team
+            is ready to assist you.
+        </p>
+
+
+        <div class="contact-details">
+
+            <!-- EMAIL -->
+
+            <div>
+                <h3>Email</h3>
+
+                <p>
+                    <a
+                        href="mailto:desirechioreka3@gmail.com"
+                        class="contact-link"
+                    >
+                        desirechioreka3@gmail.com
+                    </a>
+                </p>
+            </div>
+
+
+            <!-- WHATSAPP ORDERS -->
+
+            <div class="whatsapp-contact">
+
+                <h3>Orders & Sales</h3>
+
+                <p>
+                    Ready to order your favourite Saint Elkanah
+                    fragrance? Chat directly with our sales team.
+                </p>
+
+                <a
+                    href="https://wa.me/27762154156?text=Hello%20Saint%20Elkanah%2C%20I%20would%20like%20to%20place%20an%20order."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="whatsapp-button"
+                >
+                    <span class="whatsapp-icon">◉</span>
+                    WhatsApp Orders
+                </a>
+
+                <p class="whatsapp-number">
+                    +27 76 215 4156
+                </p>
+
+            </div>
+
+
+            <!-- WHATSAPP CUSTOMER CARE -->
+
+            <div class="whatsapp-contact">
+
+                <h3>Customer Care</h3>
+
+                <p>
+                    Have questions about our fragrances,
+                    delivery or your order? Speak directly
+                    with our customer care team.
+                </p>
+
+                <a
+                    href="https://wa.me/27697414858?text=Hello%20Saint%20Elkanah%2C%20I%20need%20assistance."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="whatsapp-button"
+                >
+                    <span class="whatsapp-icon">◉</span>
+                    WhatsApp Customer Care
+                </a>
+
+                <p class="whatsapp-number">
+                    +27 69 741 4858
+                </p>
+
+            </div>
+
+
+            <!-- CUSTOMER CARE -->
+
+            <div>
+                <h3>Customer Care</h3>
+
+                <p>
+                    We are here to assist you with your orders,
+                    product enquiries, fragrance recommendations
+                    and delivery questions.
+                </p>
+            </div>
+
+
+            <!-- FOUNDED -->
+
+            <div>
+                <h3>Founded</h3>
+
+                <p>2024</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTACT FORM -->
+
+    <div class="contact-form-wrapper">
+
+        <form class="contact-form" method="POST">
+
+            {% csrf_token %}
+
+            <div class="form-group">
+
+                <label for="name">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="subject">
+                    Subject
+                </label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="How can we help?"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Write your message..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn btn-dark"
+            >
+                Send Message
+            </button>
+
+        </form>
+
+
+        <!-- QUICK WHATSAPP -->
+
+        <div class="whatsapp-box">
+
+            <div class="whatsapp-box-content">
+
+                <p class="section-label">
+                    NEED A QUICK RESPONSE?
+                </p>
+
+                <h3>
+                    Chat With Saint Elkanah
+                </h3>
+
+                <p>
+                    Skip the contact form and speak to us
+                    directly on WhatsApp.
+                </p>
+
+                <div class="quick-whatsapp-buttons">
+
+                    <a
+                        href="https://wa.me/27762154156?text=Hello%20Saint%20Elkanah%2C%20I%20am%20interested%20in%20your%20perfumes."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="whatsapp-button"
+                    >
+                        Orders & Sales →
+                    </a>
+
+                    <a
+                        href="https://wa.me/27697414858?text=Hello%20Saint%20Elkanah%2C%20I%20need%20customer%20assistance."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="whatsapp-button"
+                    >
+                        Customer Care →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+

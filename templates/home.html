@@ -1,0 +1,322 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Saint Elkanah | Luxury Fragrances
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <p class="hero-subtitle">
+            ESTABLISHED 2024
+        </p>
+
+        <h1>
+            THE ART OF
+            <span>FRAGRANCE</span>
+        </h1>
+
+        <p class="hero-text">
+            Discover a world of timeless luxury,
+            unforgettable scents and refined elegance.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="{% url 'shop' %}" class="btn btn-gold">
+                Discover the Collection
+            </a>
+
+            <a href="{% url 'about' %}" class="btn btn-outline">
+                Our Story
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INTRODUCTION -->
+<section class="brand-intro">
+
+    <div class="intro-image">
+
+        <img src="{% static 'images/per3.jpeg' %}"
+             alt="Saint Elkanah Luxury Perfume">
+
+    </div>
+
+
+    <div class="intro-content">
+
+        <p class="section-label">
+            THE SAINT ELKANAH EXPERIENCE
+        </p>
+
+        <h2>
+            More Than a Fragrance.
+            <br>
+            A Signature.
+        </h2>
+
+        <p>
+            Saint Elkanah is a luxury fragrance brand
+            created for individuals who appreciate
+            elegance, confidence and timeless beauty.
+        </p>
+
+        <p>
+            Every fragrance is carefully selected to
+            create a lasting impression and become
+            part of your personal story.
+        </p>
+
+        <a href="{% url 'about' %}" class="text-link">
+            Discover Our Story →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURED PERFUMES -->
+<section class="featured-section">
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            OUR COLLECTION
+        </p>
+
+        <h2>
+            Featured Fragrances
+        </h2>
+
+        <p>
+            Discover fragrances designed to leave
+            a lasting impression.
+        </p>
+
+    </div>
+
+
+    <div class="perfume-grid">
+
+        {% for perfume in featured_perfumes %}
+
+        <div class="perfume-card">
+
+            <div class="perfume-image">
+
+                <img src="{{ perfume.image.url }}"
+                     alt="{{ perfume.name }}">
+
+            </div>
+
+
+            <div class="perfume-info">
+
+                <h3>
+                    {{ perfume.name }}
+                </h3>
+
+                <p class="perfume-size">
+                    {{ perfume.size }}
+                </p>
+
+                <p class="perfume-price">
+                    R{{ perfume.price }}
+                </p>
+
+                <a href="{% url 'product_detail' perfume.id %}"
+                   class="view-product">
+                    View Fragrance →
+                </a>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <div class="no-products">
+
+            <h3>
+                Our collection is coming soon.
+            </h3>
+
+            <p>
+                Add perfumes through the Django
+                admin dashboard to display them here.
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+    <div class="center-button">
+
+        <a href="{% url 'shop' %}" class="btn btn-dark">
+            View All Fragrances
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- LUXURY STATEMENT -->
+<section class="luxury-banner">
+
+    <div class="luxury-content">
+
+        <p>
+            SAINT ELKANAH
+        </p>
+
+        <h2>
+            A Fragrance Should Be
+            Remembered.
+        </h2>
+
+        <span class="gold-line"></span>
+
+        <p class="luxury-description">
+            Crafted around individuality, confidence
+            and the power of unforgettable moments.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- WHY CHOOSE US -->
+<section class="why-section">
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            WHY SAINT ELKANAH
+        </p>
+
+        <h2>
+            The Art Behind Every Bottle
+        </h2>
+
+    </div>
+
+
+    <div class="features-grid">
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ✦
+            </div>
+
+            <h3>
+                Timeless Luxury
+            </h3>
+
+            <p>
+                Elegant fragrances created for
+                unforgettable moments.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ✧
+            </div>
+
+            <h3>
+                Signature Scents
+            </h3>
+
+            <p>
+                Discover a fragrance that becomes
+                uniquely yours.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ♢
+            </div>
+
+            <h3>
+                Lasting Impression
+            </h3>
+
+            <p>
+                Fragrances designed to stay with
+                you long after the moment.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+
+    <div class="newsletter-content">
+
+        <p class="section-label">
+            JOIN THE WORLD OF SAINT ELKANAH
+        </p>
+
+        <h2>
+            Stay Inspired
+        </h2>
+
+        <p>
+            Receive exclusive access to new
+            collections, fragrance stories and
+            special offers.
+        </p>
+
+        <form class="newsletter-form">
+
+            <input
+                type="email"
+                placeholder="Enter your email address"
+                required
+            >
+
+            <button type="submit">
+                Subscribe
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}
+

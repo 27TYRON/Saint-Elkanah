@@ -1,0 +1,134 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+{{ perfume.name }} | Saint Elkanah
+{% endblock %}
+
+{% block content %}
+
+<section class="product-detail-section">
+
+    <div class="product-detail-image">
+
+        <img
+            src="{{ perfume.image.url }}"
+            alt="{{ perfume.name }}"
+        >
+
+    </div>
+
+
+    <div class="product-detail-info">
+
+        <p class="section-label">
+            SAINT ELKANAH COLLECTION
+        </p>
+
+        <h1>
+            {{ perfume.name }}
+        </h1>
+
+        <div class="product-price">
+            R{{ perfume.price }}
+        </div>
+
+
+        {% if perfume.size %}
+
+        <p class="product-size">
+            <strong>Size:</strong>
+            {{ perfume.size }}
+        </p>
+
+        {% endif %}
+
+
+        <div class="product-description">
+
+            <h3>
+                About This Fragrance
+            </h3>
+
+            <p>
+                {{ perfume.description }}
+            </p>
+
+        </div>
+
+
+        {% if perfume.fragrance_notes %}
+
+        <div class="fragrance-notes">
+
+            <h3>
+                Fragrance Notes
+            </h3>
+
+            <p>
+                {{ perfume.fragrance_notes }}
+            </p>
+
+        </div>
+
+        {% endif %}
+
+
+        <form
+            method="POST"
+            action="{% url 'add_to_cart' perfume.id %}"
+            class="add-cart-form"
+        >
+
+            {% csrf_token %}
+
+            <div class="quantity-box">
+
+                <label for="quantity">
+                    Quantity
+                </label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    name="quantity"
+                    value="1"
+                    min="1"
+                    max="20"
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn btn-gold add-cart-button"
+            >
+                Add To Cart
+            </button>
+
+        </form>
+
+
+        <div class="product-benefits">
+
+            <div>
+                ✦ Luxury Fragrance
+            </div>
+
+            <div>
+                ✦ Secure Ordering
+            </div>
+
+            <div>
+                ✦ Saint Elkanah — Founded 2024
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+

@@ -1,0 +1,110 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Shop | Saint Elkanah{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+    <div>
+        <p class="section-label">SAINT ELKANAH COLLECTION</p>
+
+        <h1>Shop Fragrances</h1>
+
+        <p>
+            Discover your signature scent.
+        </p>
+    </div>
+</section>
+
+
+<section class="shop-section">
+
+    <div class="shop-header">
+
+        <div>
+            <p class="section-label">
+                OUR COLLECTION
+            </p>
+
+            <h2>
+                Luxury Fragrances
+            </h2>
+        </div>
+
+        <p>
+            {{ perfumes|length }} fragrance{{ perfumes|length|pluralize }}
+        </p>
+
+    </div>
+
+
+    <div class="perfume-grid">
+
+        {% for perfume in perfumes %}
+
+        <div class="perfume-card">
+
+            <div class="perfume-image">
+
+                <a href="{% url 'product_detail' perfume.id %}">
+
+                    <img
+                        src="{{ perfume.image.url }}"
+                        alt="{{ perfume.name }}"
+                    >
+
+                </a>
+
+            </div>
+
+
+            <div class="perfume-info">
+
+                <h3>
+                    {{ perfume.name }}
+                </h3>
+
+                <p class="perfume-size">
+                    {{ perfume.size }}
+                </p>
+
+                <p class="perfume-price">
+                    R{{ perfume.price }}
+                </p>
+
+                <a
+                    href="{% url 'product_detail' perfume.id %}"
+                    class="view-product"
+                >
+                    View Fragrance →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        {% empty %}
+
+        <div class="no-products">
+
+            <h3>
+                No fragrances available yet.
+            </h3>
+
+            <p>
+                Add your perfumes through the Django
+                administration dashboard.
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
+

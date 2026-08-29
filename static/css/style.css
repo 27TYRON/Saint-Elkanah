@@ -1,0 +1,2220 @@
+
+/* =========================================================
+   SAINT ELKANAH
+   LUXURY PERFUME E-COMMERCE WEBSITE
+   Founded 2024
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #f8f5ef;
+    color: #151515;
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --black: #0b0b0b;
+    --dark: #151515;
+    --dark-2: #202020;
+
+    --gold: #c5a05a;
+    --gold-light: #e1c78d;
+
+    --cream: #f8f5ef;
+    --cream-dark: #eee9df;
+
+    --white: #ffffff;
+
+    --text: #252525;
+    --muted: #777777;
+
+    --border: #ded9cf;
+
+    --shadow:
+        0 15px 40px rgba(0, 0, 0, 0.08);
+
+    --transition: all 0.35s ease;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar {
+    min-height: 82px;
+
+    padding: 18px 7%;
+
+    background: var(--black);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 100;
+
+    border-bottom: 1px solid rgba(197, 160, 90, 0.2);
+}
+
+
+/* LOGO */
+
+.logo {
+    color: var(--white);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    line-height: 1;
+
+    transition: var(--transition);
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.logo:hover {
+    color: var(--gold-light);
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #eeeeee;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    transition: var(--transition);
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--gold-light);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   GENERAL BUTTONS
+========================================================= */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 14px 28px;
+
+    border: 1px solid transparent;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.btn-gold {
+    background: var(--gold);
+
+    color: var(--black);
+}
+
+.btn-gold:hover {
+    background: var(--gold-light);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(197, 160, 90, 0.25);
+}
+
+.btn-dark {
+    background: var(--black);
+
+    color: var(--white);
+}
+
+.btn-dark:hover {
+    background: var(--gold);
+
+    color: var(--black);
+
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border-color: var(--white);
+
+    color: var(--white);
+
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--white);
+
+    color: var(--black);
+}
+
+
+/* =========================================================
+   HOME HERO
+========================================================= */
+
+.hero {
+    min-height: calc(100vh - 82px);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.78),
+            rgba(0, 0, 0, 0.48),
+            rgba(0, 0, 0, 0.3)
+        ),
+        url("../images/per4.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 90px 9%;
+
+    color: var(--white);
+}
+
+.hero-content {
+    width: 100%;
+
+    max-width: 720px;
+}
+
+.hero-subtitle {
+    color: var(--gold-light);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(65px, 9vw, 125px);
+
+    font-weight: 500;
+
+    line-height: 0.88;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 35px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+.hero-text {
+    max-width: 540px;
+
+    color: #e2e2e2;
+
+    font-size: 15px;
+
+    font-weight: 300;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.section-heading {
+    max-width: 700px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+}
+
+.section-label {
+    color: var(--gold);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+.section-heading h2,
+.intro-content h2,
+.about-content h2,
+.contact-info h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(42px, 5vw, 65px);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    color: var(--black);
+
+    margin-bottom: 22px;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   BRAND INTRO
+========================================================= */
+
+.brand-intro {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 650px;
+
+    background: var(--cream);
+}
+
+.intro-image {
+    min-height: 650px;
+
+    overflow: hidden;
+}
+
+.intro-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.8s ease;
+}
+
+.intro-image:hover img {
+    transform: scale(1.04);
+}
+
+.intro-content {
+    padding: 90px 12%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.intro-content p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+
+    max-width: 550px;
+}
+
+.text-link {
+    width: fit-content;
+
+    margin-top: 12px;
+
+    color: var(--black);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    border-bottom: 1px solid var(--gold);
+
+    padding-bottom: 5px;
+
+    transition: var(--transition);
+}
+
+.text-link:hover {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   FEATURED / SHOP PRODUCTS
+========================================================= */
+
+.featured-section,
+.shop-section {
+    padding: 110px 7%;
+
+    background: var(--white);
+}
+
+.perfume-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+.perfume-card {
+    background: var(--cream);
+
+    border: 1px solid transparent;
+
+    overflow: hidden;
+
+    transition: var(--transition);
+}
+
+.perfume-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow);
+
+    border-color: var(--border);
+}
+
+.perfume-image {
+    height: 380px;
+
+    overflow: hidden;
+
+    background: #ece8df;
+}
+
+.perfume-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+.perfume-card:hover .perfume-image img {
+    transform: scale(1.06);
+}
+
+.perfume-info {
+    padding: 24px;
+}
+
+.perfume-info h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 27px;
+
+    font-weight: 600;
+
+    line-height: 1.1;
+
+    margin-bottom: 7px;
+}
+
+.perfume-size {
+    color: var(--muted);
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.perfume-price {
+    color: var(--gold);
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin: 12px 0 16px;
+}
+
+.view-product {
+    color: var(--black);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    border-bottom: 1px solid var(--gold);
+
+    padding-bottom: 5px;
+
+    transition: var(--transition);
+}
+
+.view-product:hover {
+    color: var(--gold);
+}
+
+.center-button {
+    margin-top: 60px;
+
+    text-align: center;
+}
+
+.no-products {
+    grid-column: 1 / -1;
+
+    padding: 80px 20px;
+
+    text-align: center;
+
+    border: 1px dashed var(--border);
+}
+
+.no-products h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.no-products p {
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   SHOP PAGE
+========================================================= */
+
+.page-hero {
+    min-height: 390px;
+
+    padding: 70px 7%;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.72),
+            rgba(0, 0, 0, 0.72)
+        ),
+        url("../images/luxury-banner.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: var(--white);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+.page-hero > div {
+    max-width: 750px;
+}
+
+.page-hero .section-label {
+    color: var(--gold-light);
+}
+
+.page-hero h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 8vw, 90px);
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    margin-bottom: 18px;
+}
+
+.page-hero p:last-child {
+    color: #dddddd;
+
+    font-size: 14px;
+}
+
+.shop-header {
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 55px;
+
+    border-bottom: 1px solid var(--border);
+
+    padding-bottom: 30px;
+}
+
+.shop-header h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 45px;
+
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+.shop-header > p {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   LUXURY BANNER
+========================================================= */
+
+.luxury-banner {
+    min-height: 560px;
+
+    padding: 90px 7%;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.68),
+            rgba(0, 0, 0, 0.75)
+        ),
+        url("../images/luxury-banner.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    text-align: center;
+}
+
+.luxury-content {
+    max-width: 850px;
+}
+
+.luxury-content > p:first-child {
+    color: var(--gold);
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+}
+
+.luxury-content h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(50px, 7vw, 90px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+.gold-line {
+    display: block;
+
+    width: 70px;
+
+    height: 1px;
+
+    background: var(--gold);
+
+    margin: 30px auto;
+}
+
+.luxury-description {
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #d0d0d0;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   WHY SECTION
+========================================================= */
+
+.why-section {
+    padding: 110px 7%;
+
+    background: var(--cream);
+}
+
+.features-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.feature {
+    padding: 45px 30px;
+
+    background: white;
+
+    text-align: center;
+
+    border: 1px solid var(--border);
+
+    transition: var(--transition);
+}
+
+.feature:hover {
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow);
+}
+
+.feature-icon {
+    color: var(--gold);
+
+    font-size: 38px;
+
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 29px;
+
+    font-weight: 600;
+
+    margin-bottom: 12px;
+}
+
+.feature p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.newsletter-section {
+    padding: 100px 7%;
+
+    background: var(--black);
+
+    color: white;
+
+    text-align: center;
+}
+
+.newsletter-content {
+    max-width: 750px;
+
+    margin: auto;
+}
+
+.newsletter-content h2 {
+    color: white;
+}
+
+.newsletter-content > p:not(.section-label) {
+    color: #a9a9a9;
+
+    max-width: 550px;
+
+    margin: 0 auto 30px;
+
+    font-size: 14px;
+}
+
+.newsletter-form {
+    max-width: 600px;
+
+    margin: auto;
+
+    display: flex;
+
+    border-bottom: 1px solid #555;
+}
+
+.newsletter-form input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 17px 5px;
+
+    background: transparent;
+
+    color: white;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 13px;
+}
+
+.newsletter-form input::placeholder {
+    color: #888;
+}
+
+.newsletter-form button {
+    padding: 0 25px;
+
+    background: var(--gold);
+
+    color: var(--black);
+
+    border: none;
+
+    cursor: pointer;
+
+    text-transform: uppercase;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    transition: var(--transition);
+}
+
+.newsletter-form button:hover {
+    background: var(--gold-light);
+}
+
+
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
+
+.about-section {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 650px;
+
+    background: var(--white);
+}
+
+.about-image {
+    min-height: 650px;
+}
+
+.about-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.about-content {
+    padding: 90px 12%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.about-content > p:not(.section-label) {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+.about-values {
+    padding: 110px 7%;
+
+    background: var(--cream);
+}
+
+.values-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.value-card {
+    padding: 45px 30px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    text-align: center;
+}
+
+.value-card span {
+    color: var(--gold);
+
+    font-size: 35px;
+}
+
+.value-card h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 29px;
+
+    margin: 15px 0 10px;
+}
+
+.value-card p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.about-quote {
+    min-height: 500px;
+
+    padding: 80px 7%;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+        ),
+        url("../images/luxury-banner.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+.about-quote h2 {
+    max-width: 850px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(45px, 6vw, 75px);
+
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+.about-quote > div > p:last-child {
+    color: #bbb;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   PRODUCT DETAIL
+========================================================= */
+
+.product-detail-section {
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 90px 6%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.product-detail-image {
+    height: 650px;
+
+    background: #ece8df;
+
+    overflow: hidden;
+}
+
+.product-detail-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+.product-detail-image:hover img {
+    transform: scale(1.04);
+}
+
+.product-detail-info h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(48px, 6vw, 75px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    margin-bottom: 20px;
+}
+
+.product-price {
+    color: var(--gold);
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+}
+
+.product-size {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.product-description,
+.fragrance-notes {
+    margin-top: 25px;
+}
+
+.product-description h3,
+.fragrance-notes h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+.product-description p,
+.fragrance-notes p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.add-cart-form {
+    margin-top: 30px;
+
+    display: flex;
+
+    align-items: end;
+
+    gap: 15px;
+}
+
+.quantity-box {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.quantity-box label {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.quantity-box input {
+    width: 85px;
+
+    height: 50px;
+
+    border: 1px solid var(--border);
+
+    background: white;
+
+    text-align: center;
+
+    outline: none;
+}
+
+.add-cart-button {
+    min-width: 200px;
+}
+
+.product-benefits {
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid var(--border);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
+
+.contact-section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 100px 6%;
+
+    display: grid;
+
+    grid-template-columns:
+        0.9fr 1.1fr;
+
+    gap: 90px;
+}
+
+.contact-info > p:not(.section-label) {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    max-width: 500px;
+}
+
+.contact-details {
+    margin-top: 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+.contact-details h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    margin-bottom: 3px;
+}
+
+.contact-details p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.contact-form-wrapper {
+    background: white;
+
+    padding: 45px;
+
+    box-shadow: var(--shadow);
+
+    border: 1px solid var(--border);
+}
+
+.contact-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.form-group label {
+    color: var(--text);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid var(--border);
+
+    background: var(--cream);
+
+    outline: none;
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    resize: vertical;
+
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--gold);
+
+    background: white;
+}
+
+.contact-form .btn {
+    width: fit-content;
+}
+
+
+/* =========================================================
+   CART
+========================================================= */
+
+.cart-section {
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 90px 6%;
+}
+
+.cart-container {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        350px;
+
+    gap: 45px;
+
+    align-items: start;
+}
+
+.cart-items {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.cart-item {
+    display: grid;
+
+    grid-template-columns:
+        100px
+        minmax(130px, 1fr)
+        auto
+        auto
+        auto;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 18px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    transition: var(--transition);
+}
+
+.cart-item:hover {
+    box-shadow: var(--shadow);
+}
+
+.cart-item-image {
+    width: 100px;
+
+    height: 120px;
+
+    overflow: hidden;
+
+    background: var(--cream-dark);
+}
+
+.cart-item-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.cart-item-info h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    line-height: 1.1;
+
+    margin-bottom: 5px;
+}
+
+.cart-item-info p {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+.cart-item-info .cart-price {
+    color: var(--gold);
+
+    font-weight: 600;
+
+    margin-top: 5px;
+}
+
+.cart-quantity form {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.cart-quantity input {
+    width: 55px;
+
+    height: 38px;
+
+    border: 1px solid var(--border);
+
+    text-align: center;
+
+    outline: none;
+}
+
+.cart-quantity button {
+    height: 38px;
+
+    padding: 0 10px;
+
+    background: var(--black);
+
+    color: white;
+
+    border: none;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+
+.cart-item-total {
+    color: var(--gold);
+
+    white-space: nowrap;
+}
+
+.cart-remove a {
+    color: #777;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    transition: var(--transition);
+}
+
+.cart-remove a:hover {
+    color: #b33;
+}
+
+
+/* CART SUMMARY */
+
+.cart-summary {
+    padding: 35px;
+
+    background: var(--black);
+
+    color: white;
+
+    position: sticky;
+
+    top: 25px;
+}
+
+.cart-summary .section-label {
+    color: var(--gold);
+}
+
+.cart-summary h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 38px;
+
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+.summary-line {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px 0;
+
+    color: #aaa;
+
+    border-bottom: 1px solid #333;
+
+    font-size: 12px;
+}
+
+.total-line {
+    color: white;
+
+    border-bottom: none;
+
+    font-size: 17px;
+
+    margin-bottom: 20px;
+}
+
+.total-line strong {
+    color: var(--gold);
+}
+
+.checkout-button {
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+.continue-shopping {
+    display: block;
+
+    color: #aaa;
+
+    font-size: 10px;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.continue-shopping:hover {
+    color: var(--gold);
+}
+
+
+/* EMPTY CART */
+
+.empty-cart {
+    max-width: 700px;
+
+    margin: 40px auto;
+
+    padding: 90px 30px;
+
+    background: white;
+
+    text-align: center;
+
+    border: 1px solid var(--border);
+}
+
+.empty-cart-icon {
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+.empty-cart h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 45px;
+
+    font-weight: 500;
+
+    margin-bottom: 10px;
+}
+
+.empty-cart p {
+    color: var(--muted);
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    background: #080808;
+
+    color: white;
+
+    padding: 75px 7% 25px;
+}
+
+.footer-container {
+    max-width: 1300px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 2fr;
+
+    gap: 70px;
+}
+
+.footer h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    color: var(--gold);
+
+    font-size: 36px;
+
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 18px;
+}
+
+.footer h3 {
+    color: var(--gold);
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.footer p {
+    color: #888;
+
+    font-size: 13px;
+
+    max-width: 430px;
+}
+
+.founded {
+    color: var(--gold) !important;
+
+    font-size: 10px !important;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-top: 20px;
+}
+
+.footer-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-links a {
+    color: #888;
+
+    font-size: 12px;
+
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-newsletter p {
+    margin-bottom: 15px;
+}
+
+.footer-newsletter form {
+    display: flex;
+
+    max-width: 500px;
+}
+
+.footer-newsletter input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 14px;
+
+    background: #151515;
+
+    color: white;
+
+    border: 1px solid #292929;
+
+    outline: none;
+}
+
+.footer-newsletter button {
+    padding: 0 20px;
+
+    background: var(--gold);
+
+    color: var(--black);
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.footer-bottom {
+    max-width: 1300px;
+
+    margin: 60px auto 0;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #222;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .perfume-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .product-detail-section {
+        gap: 45px;
+    }
+
+    .cart-container {
+        grid-template-columns: 1fr 320px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 22px 5%;
+    }
+
+    .nav-links {
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 18px;
+    }
+
+    .brand-intro,
+    .about-section {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-image,
+    .about-image {
+        min-height: 500px;
+
+        height: 500px;
+    }
+
+    .intro-content,
+    .about-content {
+        padding: 75px 8%;
+    }
+
+    .perfume-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .features-grid,
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-detail-section {
+        grid-template-columns: 1fr;
+
+        padding-top: 70px;
+    }
+
+    .product-detail-image {
+        height: 600px;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .cart-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-summary {
+        position: static;
+    }
+
+    .footer-container {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        min-height: auto;
+
+        padding: 20px 5%;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+
+    .nav-links {
+        gap: 12px 16px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 78vh;
+
+        padding: 65px 7%;
+
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 62px;
+
+        letter-spacing: -1px;
+    }
+
+    .hero-text {
+        font-size: 13px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+
+    /* PAGE HERO */
+
+    .page-hero {
+        min-height: 300px;
+
+        padding: 60px 7%;
+    }
+
+    .page-hero h1 {
+        font-size: 55px;
+    }
+
+
+    /* SECTIONS */
+
+    .featured-section,
+    .shop-section,
+    .why-section,
+    .about-values {
+        padding: 75px 5%;
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2,
+    .intro-content h2,
+    .about-content h2,
+    .contact-info h2 {
+        font-size: 44px;
+    }
+
+
+    /* PRODUCTS */
+
+    .perfume-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .perfume-image {
+        height: 420px;
+    }
+
+
+    /* SHOP HEADER */
+
+    .shop-header {
+        align-items: start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .shop-header h2 {
+        font-size: 40px;
+    }
+
+
+    /* INTRO */
+
+    .intro-image,
+    .about-image {
+        min-height: 400px;
+
+        height: 400px;
+    }
+
+    .intro-content,
+    .about-content {
+        padding: 65px 7%;
+    }
+
+
+    /* LUXURY */
+
+    .luxury-banner {
+        min-height: 480px;
+
+        padding: 70px 6%;
+    }
+
+    .luxury-content h2 {
+        font-size: 52px;
+    }
+
+
+    /* PRODUCT DETAIL */
+
+    .product-detail-section {
+        padding: 60px 5%;
+
+        gap: 45px;
+    }
+
+    .product-detail-image {
+        height: 480px;
+    }
+
+    .product-detail-info h1 {
+        font-size: 55px;
+    }
+
+    .add-cart-form {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .quantity-box input {
+        width: 100%;
+    }
+
+    .add-cart-button {
+        width: 100%;
+    }
+
+
+    /* CONTACT */
+
+    .contact-section {
+        padding: 70px 5%;
+    }
+
+    .contact-form-wrapper {
+        padding: 25px 20px;
+    }
+
+    .contact-form .btn {
+        width: 100%;
+    }
+
+
+    /* CART */
+
+    .cart-section {
+        padding: 60px 4%;
+    }
+
+    .cart-item {
+        grid-template-columns:
+            80px 1fr;
+
+        gap: 15px;
+    }
+
+    .cart-item-image {
+        width: 80px;
+
+        height: 100px;
+    }
+
+    .cart-item-info {
+        align-self: center;
+    }
+
+    .cart-quantity,
+    .cart-item-total,
+    .cart-remove {
+        grid-column: 2;
+    }
+
+    .cart-quantity form {
+        width: 100%;
+    }
+
+    .cart-quantity input {
+        flex: 1;
+    }
+
+    .cart-quantity button {
+        flex: 1;
+    }
+
+
+    /* NEWSLETTER */
+
+    .newsletter-section {
+        padding: 75px 5%;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+
+        border: none;
+
+        gap: 10px;
+    }
+
+    .newsletter-form input {
+        width: 100%;
+
+        border: 1px solid #333;
+
+        padding: 16px;
+    }
+
+    .newsletter-form button {
+        min-height: 50px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 60px 6% 25px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .footer-newsletter form {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .footer-newsletter button {
+        min-height: 48px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        text-align: center;
+
+        align-items: center;
+    }
+
+}
+
